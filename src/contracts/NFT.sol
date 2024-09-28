@@ -16,17 +16,14 @@ contract DappsNft is
     ERC721Burnable
 {
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
-    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     uint256 private _nextTokenId;
 
     constructor(
         address defaultAdmin,
-        address pauser,
-        address minter
+        address pauser
     ) ERC721("DappsNft", "DNFT") {
         _grantRole(DEFAULT_ADMIN_ROLE, defaultAdmin);
         _grantRole(PAUSER_ROLE, pauser);
-        _grantRole(MINTER_ROLE, minter);
     }
 
     function pause() public onlyRole(PAUSER_ROLE) {
