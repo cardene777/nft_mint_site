@@ -50,6 +50,14 @@ contract DappsNft is
         return super._update(to, tokenId, auth);
     }
 
+    function transferFrom(
+        address from,
+        address to,
+        uint256 tokenId
+    ) public override(ERC721, IERC721) {
+        super.transferFrom(from, to, tokenId);
+    }
+
     function tokenURI(
         uint256 tokenId
     ) public view override(ERC721, ERC721URIStorage) returns (string memory) {
