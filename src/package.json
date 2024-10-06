@@ -5,5 +5,8 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.2"
+  },
+  "scripts": {
+    "test": "hardhat test"
   }
 }
