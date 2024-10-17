@@ -11,3 +11,9 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.ts
 ```
+
+## Holesky
+
+| ネットワーク名 | 新しいRPC URL | チェーンID | 通貨記号 | ブロックエクスプローラーのURL |
+| ---------- | -------- | -------- | -------- | -------- |
+| Holesky | https://holesky.drpc.org | 17000 | ETH | https://holesky.etherscan.io/ |
