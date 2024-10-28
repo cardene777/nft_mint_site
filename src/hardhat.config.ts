@@ -1,11 +1,15 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "dotenv/config";
+import "@nomicfoundation/hardhat-verify";
 
-const { PRIVATE_KEY } = process.env;
+const { PRIVATE_KEY, ETHERSCAN_API_KEY } = process.env;
 
 if (!PRIVATE_KEY) {
   throw new Error("PRIVATE_KEY is not set");
+}
+if (!ETHERSCAN_API_KEY) {
+  throw new Error("ETHERSCAN_API_KEY is not set");
 }
 
 const config: HardhatUserConfig = {
@@ -13,8 +17,15 @@ const config: HardhatUserConfig = {
   networks: {
     holesky: {
       url: "https://holesky.drpc.org",
-      accounts: [PRIVATE_KEY],
+      accounts: [`0x${PRIVATE_KEY}`],
+      chainId: 17000,
     },
+  },
+  etherscan: {
+    apiKey: ETHERSCAN_API_KEY,
+  },
+  sourcify: {
+    enabled: true,
   },
 };
 

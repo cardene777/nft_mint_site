@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.11",
     "dotenv": "^16.4.5",
     "hardhat": "^2.22.12"
   },
@@ -12,6 +13,7 @@
     "node": "hardhat node",
     "console": "hardhat console",
     "deploy": "hardhat ignition deploy ./ignition/modules/DappsNFT.ts --network localhost --parameters ./ignition/parameters.json",
-    "deploy:holesky": "hardhat ignition deploy ./ignition/modules/DappsNFT.ts --network holesky --parameters ./ignition/parameters.json"
+    "deploy:holesky": "hardhat ignition deploy ./ignition/modules/DappsNFT.ts --network holesky --parameters ./ignition/parameters.json",
+    "verify:holesky": "hardhat verify --network holesky"
   }
 }
