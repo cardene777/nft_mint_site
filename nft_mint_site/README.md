@@ -2,7 +2,7 @@
 
 ## 1. Hardhat環境作成
 
-- [1_create_environment](./1_create_environment)
+- [1_create_hardhat](./1_create_hardhat)
 
 ## 2. コントラクト作成
 
