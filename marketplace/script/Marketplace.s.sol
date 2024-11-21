@@ -2,17 +2,17 @@
 pragma solidity ^0.8.13;
 
 import {Script, console} from "forge-std/Script.sol";
-import {Counter} from "../src/Counter.sol";
+import {Marketplace} from "../src/Marketplace.sol";
 
-contract CounterScript is Script {
-    Counter public counter;
+contract MarketplaceScript is Script {
+    Marketplace public marketplace;
 
     function setUp() public {}
 
     function run() public {
         vm.startBroadcast();
 
-        counter = new Counter();
+        marketplace = new Marketplace();
 
         vm.stopBroadcast();
     }
