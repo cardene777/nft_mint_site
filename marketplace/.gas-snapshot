@@ -1,0 +1,5 @@
+MarketplaceTest:testAuctionFail() (gas: 234831)
+MarketplaceTest:testAuctionFlow() (gas: 410367)
+MarketplaceTest:testBuyNFT() (gas: 248882)
+MarketplaceTest:testBuyNFTFail() (gas: 265549)
+MarketplaceTest:testListNFT() (gas: 178610)
