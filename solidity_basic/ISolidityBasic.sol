@@ -5,6 +5,12 @@ interface ISolidityBasic {
     error MaxSupplyReached();
     error InsufficientFunds();
 
+    event Mint(address indexed operator, address indexed to, uint256[]);
+
+    struct MintedItem {
+        uint256 amount;
+    }
+
     function mint(
         uint256 amount
     ) external payable returns (uint256[] memory tokenIds);
