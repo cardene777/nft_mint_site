@@ -780,3 +780,34 @@ contract CustomTaskManager is Role {
     }
 }
 
+pragma solidity 0.8.27;
+
+contract Caller {
+    function callFunction(address payable _to) public payable {
+        (bool success, bytes memory data) = _to.call{value: msg.value, gas: 100000}(
+            abi.encodeWithSignature("someFunction(uint256)", 123)
+        );
+        require(success, "Call failed");
+    }
+}
+
+pragma solidity 0.8.27;
+
+contract Logic {
+    uint public x;
+
+    function setX(uint _x) public {
+        x = _x;
+    }
+}
+
+contract Proxy {
+    uint public x;
+
+    function executeDelegatecall(address _logic, uint256 _x) public {
+        (bool success, ) = _logic.delegatecall(
+            abi.encodeWithSignature("setX(uint256)", _x)
+        );
+        require(success, "Delegatecall failed");
+    }
+}
